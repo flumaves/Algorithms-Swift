@@ -28,8 +28,8 @@ import Foundation
 /**
  API 定义：
     func Graph(\_ v: Int)   // 创建一个含有 V 个顶点不含边的图
-    func V() -> Int     // 顶点数
-    func E() -> Int     // 边数
+    func V( ) -> Int     // 顶点数
+    func E( ) -> Int     // 边数
     func addEdge(from v: Int, to w: Int)    // 向图中添加一条边 v-w
     func adj(\_ v: Int) -> [Int]    //  和 v 相邻的所有顶点
  */

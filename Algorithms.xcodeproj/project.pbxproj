@@ -32,7 +32,6 @@
 		9B88435929333DC50062D99C /* Digraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88435829333DC50062D99C /* Digraph.swift */; };
 		9B88435E293C897E0062D99C /* MinimumSpanningTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88435D293C897E0062D99C /* MinimumSpanningTree.swift */; };
 		9B884361293DF08F0062D99C /* ShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B884360293DF08F0062D99C /* ShortestPath.swift */; };
-		9B884364293F43020062D99C /* LSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B884363293F43020062D99C /* LSD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,7 +73,6 @@
 		9B88435829333DC50062D99C /* Digraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digraph.swift; sourceTree = "<group>"; };
 		9B88435D293C897E0062D99C /* MinimumSpanningTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTree.swift; sourceTree = "<group>"; };
 		9B884360293DF08F0062D99C /* ShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortestPath.swift; sourceTree = "<group>"; };
-		9B884363293F43020062D99C /* LSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,161 +106,72 @@
 			isa = PBXGroup;
 			children = (
 				9B7195D02922667F008D3F99 /* main.swift */,
-				9B7195DF2922791F008D3F99 /* 基础数据结构 */,
-				9B7195E029228B2D008D3F99 /* 算法分析 */,
-				9B7195E72923C466008D3F99 /* 排序 */,
-				9B719602292727AD008D3F99 /* 查找 */,
-				9B88434F2932066F0062D99C /* 图（未完） */,
-				9B884362293E4A4E0062D99C /* 字符串 */,
+				9B7195DF2922791F008D3F99 /* BasicDataStructer */,
+				9B7195E029228B2D008D3F99 /* Tools */,
+				9B7195E72923C466008D3F99 /* Sort */,
+				9B719602292727AD008D3F99 /* Find */,
+				9B88434F2932066F0062D99C /* Map */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
 		};
-		9B7195DF2922791F008D3F99 /* 基础数据结构 */ = {
+		9B7195DF2922791F008D3F99 /* BasicDataStructer */ = {
 			isa = PBXGroup;
 			children = (
+				9B7195E5292385CB008D3F99 /* UnionFind.swift */,
 				9B7195DD29227878008D3F99 /* List.swift */,
 				9B7195D729226755008D3F99 /* Bag.swift */,
 				9B7195D929226834008D3F99 /* Queue.swift */,
 				9B7195DB292268E4008D3F99 /* Stack.swift */,
 				9B7195FA29260DEF008D3F99 /* Heap.swift */,
 			);
-			path = "基础数据结构";
+			path = BasicDataStructer;
 			sourceTree = "<group>";
 		};
-		9B7195E029228B2D008D3F99 /* 算法分析 */ = {
+		9B7195E029228B2D008D3F99 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				9B7195E329235862008D3F99 /* Timer.swift */,
-				9B7195E5292385CB008D3F99 /* UnionFind.swift */,
 			);
-			path = "算法分析";
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		9B7195E72923C466008D3F99 /* 排序 */ = {
+		9B7195E72923C466008D3F99 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
 				9B7195E82923C568008D3F99 /* Sort.swift */,
-				9B7195F0292475BE008D3F99 /* 初级排序算法 */,
-				9B7195F1292478CC008D3F99 /* 归并排序 */,
-				9B7195F4292507EC008D3F99 /* 快速排序 */,
-				9B7195F72926064A008D3F99 /* 优先队列 */,
-				9B7195FF29266916008D3F99 /* 堆排序 */,
-			);
-			path = "排序";
-			sourceTree = "<group>";
-		};
-		9B7195F0292475BE008D3F99 /* 初级排序算法 */ = {
-			isa = PBXGroup;
-			children = (
 				9B7195EA2923C8E0008D3F99 /* SelectionSort.swift */,
 				9B7195EC2923D4F1008D3F99 /* InsertionSort.swift */,
 				9B7195EE2923F514008D3F99 /* ShellSort.swift */,
-			);
-			path = "初级排序算法";
-			sourceTree = "<group>";
-		};
-		9B7195F1292478CC008D3F99 /* 归并排序 */ = {
-			isa = PBXGroup;
-			children = (
 				9B7195F22924794B008D3F99 /* MergeSort.swift */,
-			);
-			path = "归并排序";
-			sourceTree = "<group>";
-		};
-		9B7195F4292507EC008D3F99 /* 快速排序 */ = {
-			isa = PBXGroup;
-			children = (
 				9B7195F529250802008D3F99 /* QuickSort.swift */,
-			);
-			path = "快速排序";
-			sourceTree = "<group>";
-		};
-		9B7195F72926064A008D3F99 /* 优先队列 */ = {
-			isa = PBXGroup;
-			children = (
 				9B7195F829260795008D3F99 /* PriorityQueue.swift */,
-			);
-			path = "优先队列";
-			sourceTree = "<group>";
-		};
-		9B7195FF29266916008D3F99 /* 堆排序 */ = {
-			isa = PBXGroup;
-			children = (
 				9B71960029266923008D3F99 /* HeapSort.swift */,
 			);
-			path = "堆排序";
+			path = Sort;
 			sourceTree = "<group>";
 		};
-		9B719602292727AD008D3F99 /* 查找 */ = {
-			isa = PBXGroup;
-			children = (
-				9B719603292727BB008D3F99 /* 符号表 */,
-			);
-			path = "查找";
-			sourceTree = "<group>";
-		};
-		9B719603292727BB008D3F99 /* 符号表 */ = {
+		9B719602292727AD008D3F99 /* Find */ = {
 			isa = PBXGroup;
 			children = (
 				9B71960429272906008D3F99 /* SymbolTable.swift */,
 				9B28C8B029B832620048A9B4 /* BTree.swift */,
 				9B88434D292F21FF0062D99C /* HashTable.swift */,
 			);
-			path = "符号表";
+			path = Find;
 			sourceTree = "<group>";
 		};
-		9B88434F2932066F0062D99C /* 图（未完） */ = {
-			isa = PBXGroup;
-			children = (
-				9B884350293206D00062D99C /* 无向图 */,
-				9B88435729333D940062D99C /* 有向图 */,
-				9B88435C293C89460062D99C /* 最小生成树 */,
-				9B88435F293DEFDB0062D99C /* 最短路径 */,
-			);
-			path = "图（未完）";
-			sourceTree = "<group>";
-		};
-		9B884350293206D00062D99C /* 无向图 */ = {
+		9B88434F2932066F0062D99C /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				9B884351293207010062D99C /* Graph.swift */,
 				9B88435329324E1B0062D99C /* DepthFirstSearch.swift */,
 				9B88435529324E3E0062D99C /* BreadthFirstSearch.swift */,
-			);
-			path = "无向图";
-			sourceTree = "<group>";
-		};
-		9B88435729333D940062D99C /* 有向图 */ = {
-			isa = PBXGroup;
-			children = (
 				9B88435829333DC50062D99C /* Digraph.swift */,
-			);
-			name = "有向图";
-			sourceTree = "<group>";
-		};
-		9B88435C293C89460062D99C /* 最小生成树 */ = {
-			isa = PBXGroup;
-			children = (
 				9B88435D293C897E0062D99C /* MinimumSpanningTree.swift */,
-			);
-			name = "最小生成树";
-			sourceTree = "<group>";
-		};
-		9B88435F293DEFDB0062D99C /* 最短路径 */ = {
-			isa = PBXGroup;
-			children = (
 				9B884360293DF08F0062D99C /* ShortestPath.swift */,
 			);
-			path = "最短路径";
-			sourceTree = "<group>";
-		};
-		9B884362293E4A4E0062D99C /* 字符串 */ = {
-			isa = PBXGroup;
-			children = (
-				9B884363293F43020062D99C /* LSD.swift */,
-			);
-			name = "字符串";
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +245,6 @@
 				9B88435929333DC50062D99C /* Digraph.swift in Sources */,
 				9B7195E429235862008D3F99 /* Timer.swift in Sources */,
 				9B7195EB2923C8E0008D3F99 /* SelectionSort.swift in Sources */,
-				9B884364293F43020062D99C /* LSD.swift in Sources */,
 				9B28C8B129B832620048A9B4 /* BTree.swift in Sources */,
 				9B88435E293C897E0062D99C /* MinimumSpanningTree.swift in Sources */,
 				9B7195EF2923F514008D3F99 /* ShellSort.swift in Sources */,
