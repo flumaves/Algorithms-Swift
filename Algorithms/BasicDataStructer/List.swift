@@ -7,11 +7,11 @@
 
 import Foundation
 
-// MARK: 链表
-// 链表是一种递归的数据结构，它或者为空 null，或者指向一个结点 node
-// 该结点含有一个泛型的元素和一个指向另一条链表的引用
+// MARK: LinkList
+// A linked list is a recursive data structure, which is empty or null, or points to another node.
+// A node contains an element and a reference to another linked list
 class List<Item> {
-    // 结点
+    // Node
     private class Node {
         var item: Item? // sentinel item is equal nil
         var next: Node?

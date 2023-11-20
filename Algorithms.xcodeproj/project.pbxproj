@@ -118,7 +118,6 @@
 		9B7195DF2922791F008D3F99 /* BasicDataStructer */ = {
 			isa = PBXGroup;
 			children = (
-				9B7195E5292385CB008D3F99 /* UnionFind.swift */,
 				9B7195DD29227878008D3F99 /* List.swift */,
 				9B7195D729226755008D3F99 /* Bag.swift */,
 				9B7195D929226834008D3F99 /* Queue.swift */,
@@ -164,6 +163,7 @@
 		9B88434F2932066F0062D99C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				9B7195E5292385CB008D3F99 /* UnionFind.swift */,
 				9B884351293207010062D99C /* Graph.swift */,
 				9B88435329324E1B0062D99C /* DepthFirstSearch.swift */,
 				9B88435529324E3E0062D99C /* BreadthFirstSearch.swift */,
