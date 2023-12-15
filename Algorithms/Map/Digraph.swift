@@ -14,29 +14,37 @@ import Foundation
     一条有向边的第一个顶点称为它的头，第二个顶点称为它的尾
  */
 
+/// Directed graph based on adjacency list.
 class Digraph {
-    private var V: Int      // 顶点数
-    private var E: Int = 0  // 边数
-    private var adj: [Bag<Int>]
+    private var V: Int = 0          // number of vertices
+    private var E: Int = 0          // number of edges
+    private var adj: [Bag<Int>]     // adjacency list
     
-    init(with V: Int) {
-        self.V = V
+    init(with vertexCount: Int) {
+        self.V = vertexCount
         self.adj = [Bag<Int>](repeating: Bag(), count: V)
     }
     
-    func edgeCount() -> Int { return E }
+    func edgeCount() -> Int {
+        return E
+    }
     
-    func vertexCount() -> Int { return V }
+    func vertexCount() -> Int {
+        return V
+    }
     
-    /// 添加从顶点 v 到顶点 w 的有向边
+    /// Add a directed edge from vertex v to vertex w.
     func addEdge(from v: Int, to w: Int) {
         adj[v].add(w)
         E += 1
     }
     
-    func adj(_ vertext: Int) -> Bag<Int> { return adj[vertext] }
+    /// Returns all vertices adjacent to v.
+    func verticesAdjacent(to vertex: Int) -> Bag<Int> {
+        return adj[vertex]
+    }
     
-    /// 返回一个将所有边反向的图
+    /// Returns a graph with all edges reversed.
     func reverse() -> Digraph {
         let newGraph = Digraph(with: V)
         for vertex in 0..<V {
@@ -70,7 +78,7 @@ class DirectedDFS {
     /// 从 vertex 开始深度优先搜索
     private func dfs(_ graph: Graph, from vertex: Int) {
         marked[vertex] = true
-        for nextVertex in graph.adj(vertex) {
+        for nextVertex in graph.veticesAdjacent(to: vertex) {
             if marked[nextVertex] { continue }
             dfs(graph, from: nextVertex)
         }
@@ -113,7 +121,7 @@ class DirectedCycle {
     private func dfs(_ graph: Graph, to vertex: Int) {
         onStack[vertex] = true
         marked[vertex] = true
-        for nextVertex in graph.adj(vertex) {
+        for nextVertex in graph.veticesAdjacent(to: vertex) {
             if hasCycle() { return }
             if !marked[nextVertex] {
                 edgeTo[nextVertex] = vertex
@@ -168,7 +176,7 @@ class DepthFirstOrder {
         pre.enqueue(vertex)
         
         marked[vertex] = true
-        for nextVertex in graph.adj(vertex) {
+        for nextVertex in graph.veticesAdjacent(to: vertex) {
             if marked[nextVertex] { continue }
             dfs(graph, and: nextVertex)
         }

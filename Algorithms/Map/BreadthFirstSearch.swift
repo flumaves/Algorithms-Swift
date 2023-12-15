@@ -27,7 +27,7 @@ class BreadthFirstPaths {
         marked[v] = true
         queue.enqueue(v)
         while let vertex = queue.dequeue() {
-            for nextVertex in graph.adj(vertex) {
+            for nextVertex in graph.veticesAdjacent(to: vertex) {
                 if marked[nextVertex] { continue }  // 如果已经标记过了，跳过
                 edgeTo[nextVertex] = vertex
                 marked[nextVertex] = true

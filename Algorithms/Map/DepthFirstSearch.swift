@@ -26,7 +26,7 @@ class DepthFirstSearch {
     private func dfs(_ graph: Graph, with v: Int) {
         marked[v] = true
         count += 1
-        for nextVertex in graph.adj(v) {
+        for nextVertex in graph.veticesAdjacent(to: v) {
             if !marked[nextVertex] {
                 edgeTo[nextVertex] = v
                 dfs(graph, with: nextVertex)
@@ -79,7 +79,7 @@ class CC {
     func dfs(_ graph: Graph, with v: Int) {
         marked[v] = true
         id[v] = count
-        for nextVertext in graph.adj(v) {
+        for nextVertext in graph.veticesAdjacent(to: v) {
             if marked[nextVertext] { continue }
             dfs(graph, with: nextVertext)
         }

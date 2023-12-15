@@ -63,53 +63,6 @@ class Edge: Comparable {
 }
 
 
-/// 加权无向图
-class EdgeWeightedGraph {
-    private let V: Int              // 顶点总数
-    private var E: Int              // 边的总数
-    private var adj: [Bag<Edge>]    // 邻接表
-    
-    init(with vertexCount: Int) {
-        self.V = vertexCount
-        self.E = 0
-        self.adj = [Bag<Edge>](repeating: Bag(), count: vertexCount)
-    }
-    
-    /// 返回顶点的数量
-    func vertexCount() -> Int { return self.V }
-    
-    /// 返回边的数量
-    func edgeCount() -> Int { return self.E }
-    
-    /// 添加一条边
-    func addEdge(_ edge: Edge) {
-        let vertex = edge.either()
-        let anotherVertex = edge.other(vertex)!
-        adj[vertex].add(edge)
-        adj[anotherVertex].add(edge)
-        E += 1
-    }
-    
-    /// 返回与顶点 vertex 相连的边
-    func adj(_ vertex: Int) -> Bag<Edge> {
-        return adj[vertex]
-    }
-    
-    /// 返回图中所有的边
-    func edges() -> Bag<Edge> {
-        let list = Bag<Edge>()
-        for vertex in 0..<V {
-            for edge in adj[vertex] {
-                if edge.other(vertex)! > vertex {
-                    list.add(edge)
-                }
-            }
-        }
-        return list
-    }
-}
-
-
 // Prim 算法
 // 每一步都会为一棵生长中的树添加一条边。
 // 一开始这棵树只有一个顶点，然后会向它添加 V-1 条边，每次总是将下一条连接树中的顶点与不在树中的顶点且权重最小的边加入树中。
@@ -144,7 +97,7 @@ class LazyPrimMST {
     /// 标记顶点 v 并将所有连接 v 和未被标记顶点的边加入 pq
     private func visit(_ vertex: Int, in graph: EdgeWeightedGraph) {
         marked[vertex] = true
-        for edge in graph.adj(vertex) {
+        for edge in graph.verteciesAdjacent(to: vertex) {
             if !marked[edge.other(vertex)!] { pq.insert(edge) }
         }
     }
